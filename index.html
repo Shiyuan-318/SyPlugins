@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyPlugins - Minecraft 插件</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">SyPlugins</a>
+            <ul class="nav-links">
+                <li><a href="#plugins">插件</a></li>
+                <li><a href="#features">特性</a></li>
+                <li><a href="https://modrinth.com/user/Shiyuan" target="_blank">Modrinth</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://github.com/Shiyuan-318" target="_blank" class="nav-icon" aria-label="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <button class="nav-menu-toggle" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">SyPlugins</span>
+            </h1>
+            <p class="hero-subtitle">为 Minecraft 服务器打造的优质插件集合</p>
+            <p class="hero-description">功能强大，性能卓越，易于使用</p>
+            <div class="hero-buttons">
+                <a href="#plugins" class="btn btn-primary">浏览插件</a>
+                <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-secondary">GitHub</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- 插件展示区域 -->
+    <section class="plugins" id="plugins">
+        <div class="section-header">
+            <h2 class="section-title">插件列表</h2>
+            <p class="section-subtitle">精心打造的 Minecraft 服务器插件</p>
+        </div>
+        
+        <div class="plugins-grid">
+            <!-- SyTP -->
+            <div class="plugin-card" data-plugin="sytp">
+                <div class="plugin-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <rect x="8" y="16" width="48" height="32" rx="4" fill="url(#gradient1)"/>
+                        <circle cx="24" cy="32" r="6" fill="white" opacity="0.9"/>
+                        <path d="M36 28L44 32L36 36V28Z" fill="white" opacity="0.9"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="8" y1="16" x2="56" y2="48" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#667eea"/>
+                                <stop offset="1" stop-color="#764ba2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="plugin-name">SyTP</h3>
+                <p class="plugin-description">多功能传送插件，支持TPA请求传送、TPC坐标传送、TPW世界传送，含经济系统、传送延迟、冷却时间和粒子效果</p>
+                <div class="plugin-tags">
+                    <span class="tag">传送</span>
+                    <span class="tag">TPA</span>
+                    <span class="tag">经济</span>
+                </div>
+                <a href="https://modrinth.com/plugin/sytp" target="_blank" class="plugin-link">
+                    了解更多
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- SyLocation -->
+            <div class="plugin-card" data-plugin="sylocation">
+                <div class="plugin-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="26" r="12" fill="url(#gradient2)"/>
+                        <path d="M32 38L20 52H44L32 38Z" fill="url(#gradient2)"/>
+                        <circle cx="32" cy="26" r="6" fill="white" opacity="0.9"/>
+                        <defs>
+                            <linearGradient id="gradient2" x1="20" y1="14" x2="44" y2="52" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#f093fb"/>
+                                <stop offset="1" stop-color="#f5576c"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="plugin-name">SyLocation</h3>
+                <p class="plugin-description">玩家位置查询插件，通过/syl命令快速查看指定玩家的坐标和所在世界信息</p>
+                <div class="plugin-tags">
+                    <span class="tag">位置</span>
+                    <span class="tag">查询</span>
+                    <span class="tag">管理</span>
+                </div>
+                <a href="https://modrinth.com/plugin/sylocation" target="_blank" class="plugin-link">
+                    了解更多
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- SyEnergy -->
+            <div class="plugin-card" data-plugin="syenergy">
+                <div class="plugin-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M34 8L20 30H32L28 56L48 28H34L38 8H34Z" fill="url(#gradient3)"/>
+                        <defs>
+                            <linearGradient id="gradient3" x1="20" y1="8" x2="48" y2="56" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4facfe"/>
+                                <stop offset="1" stop-color="#00f2fe"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="plugin-name">SyEnergy</h3>
+                <p class="plugin-description">智能节能插件，自动管理服务器能源消耗，优化性能并降低资源占用</p>
+                <div class="plugin-tags">
+                    <span class="tag">节能</span>
+                    <span class="tag">优化</span>
+                    <span class="tag">性能</span>
+                </div>
+                <a href="https://modrinth.com/plugin/syenergy" target="_blank" class="plugin-link">
+                    了解更多
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- SyBroadcast -->
+            <div class="plugin-card" data-plugin="sybroadcast">
+                <div class="plugin-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M8 20C8 17.7909 9.79086 16 12 16H40C42.2091 16 44 17.7909 44 20V36C44 38.2091 42.2091 40 40 40H32L24 48V40H12C9.79086 40 8 38.2091 8 36V20Z" fill="url(#gradient4)"/>
+                        <circle cx="50" cy="28" r="8" fill="url(#gradient4)" opacity="0.6"/>
+                        <circle cx="20" cy="28" r="3" fill="white"/>
+                        <circle cx="28" cy="28" r="3" fill="white"/>
+                        <circle cx="36" cy="28" r="3" fill="white"/>
+                        <defs>
+                            <linearGradient id="gradient4" x1="8" y1="16" x2="58" y2="48" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fa709a"/>
+                                <stop offset="1" stop-color="#fee140"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="plugin-name">SyBroadcast</h3>
+                <p class="plugin-description">服务器广播插件，支持定时自动广播和手动发送广播消息给所有玩家</p>
+                <div class="plugin-tags">
+                    <span class="tag">广播</span>
+                    <span class="tag">公告</span>
+                    <span class="tag">定时</span>
+                </div>
+                <a href="https://modrinth.com/plugin/sybroadcast" target="_blank" class="plugin-link">
+                    了解更多
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- SyExtract -->
+            <div class="plugin-card" data-plugin="syextract">
+                <div class="plugin-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <rect x="12" y="8" width="40" height="48" rx="4" fill="url(#gradient5)"/>
+                        <rect x="20" y="16" width="24" height="4" rx="2" fill="white" opacity="0.8"/>
+                        <rect x="20" y="24" width="16" height="4" rx="2" fill="white" opacity="0.6"/>
+                        <circle cx="32" cy="44" r="8" fill="white" opacity="0.9"/>
+                        <path d="M28 44L31 47L36 41" stroke="url(#gradient5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="gradient5" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#a8edea"/>
+                                <stop offset="1" stop-color="#fed6e3"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="plugin-name">SyExtract</h3>
+                <p class="plugin-description">世界资源提取插件，高效提取和管理游戏世界中的各类资源数据</p>
+                <div class="plugin-tags">
+                    <span class="tag">资源</span>
+                    <span class="tag">世界</span>
+                    <span class="tag">数据</span>
+                </div>
+                <a href="https://modrinth.com/plugin/syextract" target="_blank" class="plugin-link">
+                    了解更多
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- SyBountyTask -->
+            <div class="plugin-card" data-plugin="sybountytask">
+                <div class="plugin-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M32 8L36 20H48L38 28L42 40L32 32L22 40L26 28L16 20H28L32 8Z" fill="url(#gradient6)"/>
+                        <circle cx="32" cy="48" r="6" fill="url(#gradient6)" opacity="0.8"/>
+                        <defs>
+                            <linearGradient id="gradient6" x1="16" y1="8" x2="48" y2="54" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ffecd2"/>
+                                <stop offset="1" stop-color="#fcb69f"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="plugin-name">SyBountyTask</h3>
+                <p class="plugin-description">悬赏任务系统，支持发布、认领、完成和验收任务，含多种任务类型、Vault经济集成和GUI界面</p>
+                <div class="plugin-tags">
+                    <span class="tag">任务</span>
+                    <span class="tag">悬赏</span>
+                    <span class="tag">经济</span>
+                    <span class="tag">GUI</span>
+                </div>
+                <a href="https://modrinth.com/plugin/sybountytask" target="_blank" class="plugin-link">
+                    了解更多
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特性展示 -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 class="section-title">为什么选择 SyPlugins</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 4L28 18H44L32 28L36 44L24 34L12 44L16 28L4 18H20L24 4Z" fill="url(#feat1)"/>
+                        <defs>
+                            <linearGradient id="feat1" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#f093fb"/>
+                                <stop offset="1" stop-color="#f5576c"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>优质代码</h3>
+                <p>精心编写的代码，遵循最佳实践，确保稳定性和可维护性</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="18" stroke="url(#feat2)" stroke-width="3"/>
+                        <path d="M24 12V24L32 32" stroke="url(#feat2)" stroke-width="3" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="feat2" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4facfe"/>
+                                <stop offset="1" stop-color="#00f2fe"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>持续更新</h3>
+                <p>积极维护和更新，及时修复问题并添加新功能</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="14" width="32" height="24" rx="4" stroke="url(#feat3)" stroke-width="3"/>
+                        <path d="M16 22H20M16 30H28" stroke="url(#feat3)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="feat3" x1="8" y1="14" x2="40" y2="38" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#43e97b"/>
+                                <stop offset="1" stop-color="#38f9d7"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>详细文档</h3>
+                <p>完整的文档和教程，帮助您快速上手和配置</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 4C14 4 8 10 8 20C8 30 16 38 24 44C32 38 40 30 40 20C40 10 34 4 24 4Z" fill="url(#feat4)"/>
+                        <circle cx="24" cy="20" r="6" fill="white"/>
+                        <defs>
+                            <linearGradient id="feat4" x1="8" y1="4" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fa709a"/>
+                                <stop offset="1" stop-color="#fee140"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>开源免费</h3>
+                <p>所有插件均开源免费，可自由使用和修改</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 区域 -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>开始使用 SyPlugins</h2>
+            <p>为您的 Minecraft 服务器添加强大功能</p>
+            <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-primary btn-large">
+                访问 GitHub
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <a href="#" class="footer-logo">SyPlugins</a>
+                <p class="footer-desc">为 Minecraft 服务器打造的优质插件集合</p>
+            </div>
+            <div class="footer-plugins">
+                <a href="https://github.com/Shiyuan-318/SyTP" target="_blank">SyTP</a>
+                <a href="https://github.com/Shiyuan-318/SyLocation" target="_blank">SyLocation</a>
+                <a href="https://github.com/Shiyuan-318/SyEnergy" target="_blank">SyEnergy</a>
+                <a href="https://github.com/Shiyuan-318/SyBroadcast" target="_blank">SyBroadcast</a>
+                <a href="https://github.com/Shiyuan-318/SyExtract" target="_blank">SyExtract</a>
+                <a href="https://github.com/Shiyuan-318/SyBountyTask" target="_blank">SyBountyTask</a>
+            </div>
+            <div class="footer-bottom">
+                <span>Made by Shiyuan</span>
+                <a href="https://github.com/Shiyuan-318" target="_blank" class="footer-github">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
