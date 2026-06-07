@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 粒子背景 -->
+    <canvas id="particle-canvas"></canvas>
+
     <!-- 导航栏 -->
-    <nav class="nav">
+    <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">SyPlugins</a>
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">⛏</span>
+                <span class="logo-text">SyPlugins</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#plugins">插件</a></li>
                 <li><a href="#features">特性</a></li>
@@ -28,39 +34,78 @@
                 <button class="nav-menu-toggle" aria-label="菜单">
                     <span></span>
                     <span></span>
+                    <span></span>
                 </button>
             </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#plugins">插件</a>
+            <a href="#features">特性</a>
+            <a href="https://modrinth.com/user/Shiyuan" target="_blank">Modrinth</a>
+            <a href="https://github.com/Shiyuan-318" target="_blank">GitHub</a>
         </div>
     </nav>
 
     <!-- Hero 区域 -->
     <section class="hero">
         <div class="hero-content">
+            <div class="hero-badge">Minecraft Server Plugins</div>
             <h1 class="hero-title">
-                <span class="gradient-text">SyPlugins</span>
+                <span class="title-line">为你的服务器</span>
+                <span class="title-line title-accent">注入灵魂</span>
             </h1>
-            <p class="hero-subtitle">为 Minecraft 服务器打造的优质插件集合</p>
-            <p class="hero-description">功能强大，性能卓越，易于使用</p>
+            <p class="hero-description">SyPlugins — 精心打造的 Minecraft 服务器插件集合，功能强大、性能卓越、开箱即用</p>
             <div class="hero-buttons">
-                <a href="#plugins" class="btn btn-primary">浏览插件</a>
-                <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-secondary">GitHub</a>
+                <a href="#plugins" class="btn btn-primary">
+                    <span>浏览插件</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-ghost">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">11+</span>
+                    <span class="stat-label">插件</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">开源</span>
+                    <span class="stat-label">免费</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">持续</span>
+                    <span class="stat-label">更新</span>
+                </div>
             </div>
         </div>
         <div class="hero-scroll-indicator">
-            <div class="scroll-arrow"></div>
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
         </div>
     </section>
 
     <!-- 插件展示区域 -->
     <section class="plugins" id="plugins">
         <div class="section-header">
+            <span class="section-label">// PLUGINS</span>
             <h2 class="section-title">插件列表</h2>
             <p class="section-subtitle">精心打造的 Minecraft 服务器插件</p>
         </div>
-        
+
         <div class="plugins-grid">
             <!-- SyTP -->
             <div class="plugin-card" data-plugin="sytp">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="8" y="16" width="48" height="32" rx="4" fill="url(#gradient1)"/>
@@ -82,7 +127,7 @@
                     <span class="tag">经济</span>
                 </div>
                 <a href="https://modrinth.com/plugin/sytp" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -91,6 +136,7 @@
 
             <!-- SyLocation -->
             <div class="plugin-card" data-plugin="sylocation">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <circle cx="32" cy="26" r="12" fill="url(#gradient2)"/>
@@ -112,7 +158,7 @@
                     <span class="tag">管理</span>
                 </div>
                 <a href="https://modrinth.com/plugin/sylocation" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -121,6 +167,7 @@
 
             <!-- SyEnergy -->
             <div class="plugin-card" data-plugin="syenergy">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M34 8L20 30H32L28 56L48 28H34L38 8H34Z" fill="url(#gradient3)"/>
@@ -140,7 +187,7 @@
                     <span class="tag">性能</span>
                 </div>
                 <a href="https://modrinth.com/plugin/syenergy" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -149,6 +196,7 @@
 
             <!-- SyBroadcast -->
             <div class="plugin-card" data-plugin="sybroadcast">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M8 20C8 17.7909 9.79086 16 12 16H40C42.2091 16 44 17.7909 44 20V36C44 38.2091 42.2091 40 40 40H32L24 48V40H12C9.79086 40 8 38.2091 8 36V20Z" fill="url(#gradient4)"/>
@@ -172,7 +220,7 @@
                     <span class="tag">定时</span>
                 </div>
                 <a href="https://modrinth.com/plugin/sybroadcast" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -181,6 +229,7 @@
 
             <!-- SyExtract -->
             <div class="plugin-card" data-plugin="syextract">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="12" y="8" width="40" height="48" rx="4" fill="url(#gradient5)"/>
@@ -204,7 +253,7 @@
                     <span class="tag">社交</span>
                 </div>
                 <a href="https://modrinth.com/plugin/syextract" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -213,6 +262,7 @@
 
             <!-- SyBountyTask -->
             <div class="plugin-card" data-plugin="sybountytask">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M32 8L36 20H48L38 28L42 40L32 32L22 40L26 28L16 20H28L32 8Z" fill="url(#gradient6)"/>
@@ -234,7 +284,7 @@
                     <span class="tag">GUI</span>
                 </div>
                 <a href="https://modrinth.com/plugin/sybountytask" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -243,6 +293,7 @@
 
             <!-- SyAPI -->
             <div class="plugin-card" data-plugin="syapi">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="8" y="12" width="48" height="40" rx="6" fill="url(#gradient7)"/>
@@ -262,7 +313,7 @@
                     <span class="tag">开发</span>
                 </div>
                 <a href="https://modrinth.com/plugin/syapi" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -271,6 +322,7 @@
 
             <!-- SyMeans -->
             <div class="plugin-card" data-plugin="symeans">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <circle cx="32" cy="32" r="22" fill="url(#gradient8)"/>
@@ -290,7 +342,7 @@
                     <span class="tag">轻量</span>
                 </div>
                 <a href="https://modrinth.com/plugin/symeans" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -299,6 +351,7 @@
 
             <!-- SyMessage -->
             <div class="plugin-card" data-plugin="symessage">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="8" y="14" width="48" height="36" rx="6" fill="url(#gradient9)"/>
@@ -321,7 +374,7 @@
                     <span class="tag">经济</span>
                 </div>
                 <a href="https://modrinth.com/plugin/symessage" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -330,6 +383,7 @@
 
             <!-- SyPVP -->
             <div class="plugin-card" data-plugin="sypvp">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M32 8L36 16H48L38 24L42 36L32 28L22 36L26 24L16 16H28L32 8Z" fill="url(#gradient10)"/>
@@ -350,7 +404,7 @@
                     <span class="tag">权限</span>
                 </div>
                 <a href="https://modrinth.com/plugin/sypvp" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -359,6 +413,7 @@
 
             <!-- SyShop -->
             <div class="plugin-card" data-plugin="syshop">
+                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="10" y="20" width="44" height="32" rx="4" fill="url(#gradient11)"/>
@@ -381,7 +436,7 @@
                     <span class="tag">交易</span>
                 </div>
                 <a href="https://modrinth.com/plugin/syshop" target="_blank" class="plugin-link">
-                    了解更多
+                    <span>了解更多</span>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -393,6 +448,7 @@
     <!-- 特性展示 -->
     <section class="features" id="features">
         <div class="section-header">
+            <span class="section-label">// WHY SYPLUGINS</span>
             <h2 class="section-title">为什么选择 SyPlugins</h2>
         </div>
         <div class="features-grid">
@@ -465,12 +521,13 @@
     <!-- CTA 区域 -->
     <section class="cta">
         <div class="cta-content">
+            <div class="cta-decoration"></div>
             <h2>开始使用 SyPlugins</h2>
             <p>为您的 Minecraft 服务器添加强大功能</p>
             <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-primary btn-large">
-                访问 GitHub
+                <span>访问 GitHub</span>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
         </div>
@@ -480,7 +537,10 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-top">
-                <a href="#" class="footer-logo">SyPlugins</a>
+                <a href="#" class="footer-logo">
+                    <span class="logo-icon">⛏</span>
+                    SyPlugins
+                </a>
                 <p class="footer-desc">为 Minecraft 服务器打造的优质插件集合</p>
             </div>
             <div class="footer-plugins">
