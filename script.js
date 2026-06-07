@@ -1,97 +1,31 @@
-// SyPlugins — Interactive Script
-// Particle background, card glow tracking, scroll animations, mobile menu
+// SyPlugins — Material Design 3 Interactions
+// Ripple effects, scroll animations, parallax, mobile menu
 
 document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
+    initRipple();
     initNavigation();
     initScrollAnimations();
     initSmoothScroll();
-    initCardGlow();
     initParallaxEffect();
 });
 
-/* ============ Particle Background ============ */
-function initParticles() {
-    const canvas = document.getElementById('particle-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    let width, height, particles;
-    const PARTICLE_COUNT = 60;
-    const MAX_DIST = 120;
-
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-
-    function createParticles() {
-        particles = [];
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.3,
-                vy: (Math.random() - 0.5) * 0.3,
-                size: Math.random() * 2 + 0.5,
-                opacity: Math.random() * 0.4 + 0.1,
+/* ============ MD3 Ripple Effect ============ */
+function initRipple() {
+    document.querySelectorAll('.btn, .nav-logo, .nav-icon, .nav-links a, .footer-logo, .plugin-link, .qq-link')
+        .forEach(el => {
+            el.classList.add('ripple');
+            el.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple-effect');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                this.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
             });
-        }
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, width, height);
-
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < MAX_DIST) {
-                    const alpha = (1 - dist / MAX_DIST) * 0.08;
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(52, 211, 153, ${alpha})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
-            }
-        }
-
-        // Draw particles
-        for (const p of particles) {
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(52, 211, 153, ${p.opacity})`;
-            ctx.fill();
-        }
-    }
-
-    function update() {
-        for (const p of particles) {
-            p.x += p.vx;
-            p.y += p.vy;
-            if (p.x < 0 || p.x > width) p.vx *= -1;
-            if (p.y < 0 || p.y > height) p.vy *= -1;
-        }
-    }
-
-    function loop() {
-        update();
-        draw();
-        requestAnimationFrame(loop);
-    }
-
-    resize();
-    createParticles();
-    loop();
-
-    window.addEventListener('resize', () => {
-        resize();
-        createParticles();
-    });
+        });
 }
 
 /* ============ Navigation ============ */
@@ -154,7 +88,7 @@ function initScrollAnimations() {
 
     animateElements.forEach((el, index) => {
         el.classList.add('fade-in');
-        el.style.transitionDelay = `${(index % 6) * 0.08}s`;
+        el.style.transitionDelay = `${(index % 6) * 0.06}s`;
     });
 
     const observer = new IntersectionObserver((entries) => {
@@ -187,19 +121,6 @@ function initSmoothScroll() {
     });
 }
 
-/* ============ Card Glow Tracking ============ */
-function initCardGlow() {
-    document.querySelectorAll('.plugin-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            card.style.setProperty('--mouse-x', `${x}%`);
-            card.style.setProperty('--mouse-y', `${y}%`);
-        });
-    });
-}
-
 /* ============ Parallax Effect ============ */
 function initParallaxEffect() {
     const hero = document.querySelector('.hero');
@@ -214,7 +135,7 @@ function initParallaxEffect() {
         if (scrollY < heroHeight) {
             const heroContent = hero.querySelector('.hero-content');
             if (heroContent) {
-                const translateY = scrollY * 0.25;
+                const translateY = scrollY * 0.2;
                 const opacity = Math.max(0, 1 - scrollY / (heroHeight * 0.6));
                 heroContent.style.transform = `translateY(${translateY}px)`;
                 heroContent.style.opacity = opacity;

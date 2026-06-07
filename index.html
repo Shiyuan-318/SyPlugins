@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 粒子背景 -->
-    <canvas id="particle-canvas"></canvas>
-
     <!-- 导航栏 -->
     <nav class="nav" id="nav">
         <div class="nav-container">
@@ -63,7 +60,7 @@
                         <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-ghost">
+                <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-outlined">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
@@ -105,7 +102,6 @@
         <div class="plugins-grid">
             <!-- SyTP -->
             <div class="plugin-card" data-plugin="sytp">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="8" y="16" width="48" height="32" rx="4" fill="url(#gradient1)"/>
@@ -136,7 +132,6 @@
 
             <!-- SyLocation -->
             <div class="plugin-card" data-plugin="sylocation">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <circle cx="32" cy="26" r="12" fill="url(#gradient2)"/>
@@ -167,7 +162,6 @@
 
             <!-- SyEnergy -->
             <div class="plugin-card" data-plugin="syenergy">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M34 8L20 30H32L28 56L48 28H34L38 8H34Z" fill="url(#gradient3)"/>
@@ -196,7 +190,6 @@
 
             <!-- SyBroadcast -->
             <div class="plugin-card" data-plugin="sybroadcast">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M8 20C8 17.7909 9.79086 16 12 16H40C42.2091 16 44 17.7909 44 20V36C44 38.2091 42.2091 40 40 40H32L24 48V40H12C9.79086 40 8 38.2091 8 36V20Z" fill="url(#gradient4)"/>
@@ -229,7 +222,6 @@
 
             <!-- SyExtract -->
             <div class="plugin-card" data-plugin="syextract">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="12" y="8" width="40" height="48" rx="4" fill="url(#gradient5)"/>
@@ -262,7 +254,6 @@
 
             <!-- SyBountyTask -->
             <div class="plugin-card" data-plugin="sybountytask">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M32 8L36 20H48L38 28L42 40L32 32L22 40L26 28L16 20H28L32 8Z" fill="url(#gradient6)"/>
@@ -293,7 +284,6 @@
 
             <!-- SyAPI -->
             <div class="plugin-card" data-plugin="syapi">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="8" y="12" width="48" height="40" rx="6" fill="url(#gradient7)"/>
@@ -322,7 +312,6 @@
 
             <!-- SyMeans -->
             <div class="plugin-card" data-plugin="symeans">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <circle cx="32" cy="32" r="22" fill="url(#gradient8)"/>
@@ -351,7 +340,6 @@
 
             <!-- SyMessage -->
             <div class="plugin-card" data-plugin="symessage">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="8" y="14" width="48" height="36" rx="6" fill="url(#gradient9)"/>
@@ -383,7 +371,6 @@
 
             <!-- SyPVP -->
             <div class="plugin-card" data-plugin="sypvp">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <path d="M32 8L36 16H48L38 24L42 36L32 28L22 36L26 24L16 16H28L32 8Z" fill="url(#gradient10)"/>
@@ -413,7 +400,6 @@
 
             <!-- SyShop -->
             <div class="plugin-card" data-plugin="syshop">
-                <div class="card-glow"></div>
                 <div class="plugin-icon">
                     <svg viewBox="0 0 64 64" fill="none">
                         <rect x="10" y="20" width="44" height="32" rx="4" fill="url(#gradient11)"/>
@@ -521,7 +507,6 @@
     <!-- CTA 区域 -->
     <section class="cta">
         <div class="cta-content">
-            <div class="cta-decoration"></div>
             <h2>开始使用 SyPlugins</h2>
             <p>为您的 Minecraft 服务器添加强大功能</p>
             <a href="https://github.com/Shiyuan-318" target="_blank" class="btn btn-primary btn-large">
